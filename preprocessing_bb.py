@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def get_object(input):
 
     BLACK_THRESHOLD = 200
-    THIN_THRESHOLD = 10
+    THIN_THRESHOLD = 30
 
     img = cv2.GaussianBlur(input, (5, 5), 0)
     imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
