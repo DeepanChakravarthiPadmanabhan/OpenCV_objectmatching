@@ -3,7 +3,7 @@ import cv2
 import matplotlib.pyplot as plt
 f, axs = plt.subplots(2,2,figsize=(15,6))
 
-im = cv2.imread('/image_tech/T3.jpeg')
+im = cv2.imread('image_tech/T3.jpeg')
 imgray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 
 cv2.imshow("input_img", im)
