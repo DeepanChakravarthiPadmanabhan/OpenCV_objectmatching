@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 def get_object(input):
 
     BLACK_THRESHOLD = 200
-    THIN_THRESHOLD = 30
+    LOW_SIZE_THRESHOLD = 30
+    MAX_SIZE_THRESHOLD = 450
 
     img = cv2.GaussianBlur(input, (5, 5), 0)
     imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -20,7 +21,8 @@ def get_object(input):
         idx += 1
         x, y, w, h = cv2.boundingRect(cnt)
         roi = img[y:y + h, x:x + w]
-        if h < THIN_THRESHOLD or w < THIN_THRESHOLD:
+        if h < LOW_SIZE_THRESHOLD or w < LOW_SIZE_THRESHOLD or\
+                h > MAX_SIZE_THRESHOLD or w > MAX_SIZE_THRESHOLD:
             continue
         # cv2.imwrite(str(idx) + '.png', roi)
         cv2.rectangle(img, (x, y), (x + w, y + h), (200, 0, 0), 2)
