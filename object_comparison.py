@@ -7,8 +7,8 @@ import cv2
 # img1 = cv2.imread('/home/deepan/PycharmProjects/techchallenge/ContestImages/Targets/Target0.jpg',0)          # queryImage
 # img2 = cv2.imread('/home/deepan/PycharmProjects/techchallenge/ContestImages/Queries/Target0/Img16.jpg',0)    # trainImage
 
-img1i = cv2.imread('/home/deepan/PycharmProjects/techchallenge/image_tech/Q3.jpeg',0)          # queryImage
-img2i = cv2.imread('/home/deepan/PycharmProjects/techchallenge/image_tech/T3a.jpeg', 0)         # trainImage
+img1i = cv2.imread('image_tech/Q3.jpeg',0)          # queryImage
+img2i = cv2.imread('image_tech/T3a.jpeg', 0)         # trainImage
 img1 = cv2.GaussianBlur(img1i,(5,5),0)
 img2 = cv2.GaussianBlur(img2i,(5,5),0)
 # f, axs = plt.subplots(2,2,figsize=(15,6))
@@ -29,7 +29,7 @@ kp1, des1 = orb.detectAndCompute(img1,None)
 kp2, des2 = orb.detectAndCompute(img2,None)
 
 # create BFMatcher object
-bf=cv2.BFMatcher()
+#bf=cv2.BFMatcher()
 bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
 
 # Match descriptors.
